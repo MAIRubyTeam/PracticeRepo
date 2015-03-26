@@ -25,7 +25,7 @@ class Shape
 	
 	public void draw()
 	{
-		System.out.println(this.toString() + "have coords: (" + coord.getX() + "; " + coord.getY() + ")");
+		System.out.println(this.getClass().getSimpleName() + " have coords: "  + coord.toString());
 	}
 
 	public Point[] getVerteces() 

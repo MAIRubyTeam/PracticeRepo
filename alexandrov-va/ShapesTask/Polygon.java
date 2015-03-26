@@ -11,7 +11,7 @@ class Polygon extends Shape
 
 	public void draw()
 	{
-		System.out.print(this.toString() + " have coords: ");
+		System.out.print(this.getClass().getSimpleName() + " have coords: ");
 		for(Point p: getVerteces())
 		{
 			System.out.print(p.toString() + " ");
