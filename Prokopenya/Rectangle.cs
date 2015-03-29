@@ -18,9 +18,9 @@ namespace AbstractFigure
             LeftTop = verteces[0];
             RightBottom = verteces[1];
             Height = verteces[0].GetDistanceToPoint(new Point(LeftTop.X, RightBottom.Y));
-        }
 
-        public void Draw()
+        }     
+        override public void Draw()
         {
             Console.WriteLine(ToString());
             Console.WriteLine("Четырехугольник с координатами: ");

@@ -11,12 +11,16 @@ namespace AbstractFigure
         private Point[] verteces;
         public Point[] Verteces { get; set; }
 
-        public Polygon(Point[] verteces):base(new Point(0,0))
+        public Polygon(Point[] verteces)
         {
+            if (verteces == null || verteces.Length < 3)
+            {
+                throw new Exception("!!");
+            }
             Verteces = verteces;
         }
 
-        public void Draw()
+        override public void Draw()
         {
             Console.WriteLine(ToString());
             if (Verteces.Length != 3)

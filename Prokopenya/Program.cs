@@ -12,10 +12,7 @@ namespace AbstractFigure
         {
             Point center = new Point(3.1, 2.7);
 
-            Point[] coordinates = { new Point(0, 1), new Point(1, 1), new Point(1, 0), new Point(0, 0), new Point(-1, -2) };
-
-            Figure figure = new Figure(center);
-            figure.Draw();        
+            Point[] coordinates = { new Point(5, 1), new Point(7, 6), new Point(3, 9), new Point(8, 0), new Point(-1, -2) };
 
             Polygon polygon = new Polygon(coordinates);
             polygon.Draw();
@@ -29,6 +26,15 @@ namespace AbstractFigure
             Triangle triangle = new Triangle(coordinates);
             triangle.Draw();
 
+            try
+            {
+                Triangle triangle1 = new Triangle(new Point(0, 0), new Point(0, 0), new Point(0, 0));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Привет ");
+                throw;
+            }
             Oval oval = new Oval(center, 6.2, 9.4);
             oval.Draw();
 

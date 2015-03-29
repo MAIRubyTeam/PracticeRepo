@@ -14,7 +14,7 @@ namespace AbstractFigure
             Radius = radius;
         }        
 
-        public void Draw()
+        override public void Draw()
         {
             Console.WriteLine(ToString());
             Console.WriteLine("Круг с центром в точке ({0}; {1})\nрадиус {2}", Coordinate.X, Coordinate.Y, Radius);

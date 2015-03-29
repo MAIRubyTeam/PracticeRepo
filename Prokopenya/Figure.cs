@@ -6,22 +6,15 @@ using System.Threading.Tasks;
 
 namespace AbstractFigure
 {
-    class Figure
+    abstract class Figure
     {
         private Point coordinate;
         public Point Coordinate { get; set; }
-        
-        public Figure(Point point)
+
+        public Figure()
         {
-            Coordinate = point;
         }
 
-        public void Draw()
-        {
-            Console.WriteLine(ToString());
-            Console.Write("Фигура в центре с точкой ");
-            Console.Write("({0}; {1})\n", Coordinate.X, Coordinate.Y);
-            Console.WriteLine();
-        }
+        abstract public void Draw();
     }
 }
