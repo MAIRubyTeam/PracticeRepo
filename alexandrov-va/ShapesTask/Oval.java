@@ -31,4 +31,10 @@ class Oval extends RoundShapes
 	public void setR2(int r2) {
 		this.r2 = r2;
 	}
+	
+	public void draw()
+	{
+		System.out.println(this.getClass().getSimpleName() + " have coords: " + this.getCoord().toString() + 
+				"with radiuses: " + r1 + " and " + r2);
+	}
 }

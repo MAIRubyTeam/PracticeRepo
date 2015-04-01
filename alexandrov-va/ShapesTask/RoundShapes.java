@@ -7,8 +7,9 @@ class RoundShapes extends Shape
 	{
 		super(point);
 	}
-	/*public void draw()
+	
+	public void draw()
 	{
-		System.out.println(this.toString() + " have coords: " + this.getCoord().getX() + " " + this.getCoord().getY());
-	}*/
+		System.out.println(this.getClass().getSimpleName() + " have coords: " + this.getCoord().toString());
+	}
 }
