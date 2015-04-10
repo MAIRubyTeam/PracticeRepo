@@ -1,8 +1,9 @@
 class Group
-	attr_accessor :name
+	attr_accessor :name, :users
 
 	def initialize(name)
 		@name = name
+		@users = []
 	end
 
 end
@@ -21,8 +22,9 @@ class User
 	end
 
 	def add_group(new_group)		
-		if (@groups.include?(new_group) == false)
+		if !(@groups.include?(new_group))
 			@groups << new_group
+			new_group.users.push(name)
 		end
 	end
 
@@ -43,5 +45,4 @@ aleksey.add_group(admin)
 aleksey.add_group(admin)
 aleksey.add_group(moderator)
 
-p igor.groups
-p aleksey.groups
+p moderator.users
