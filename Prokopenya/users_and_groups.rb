@@ -1,10 +1,17 @@
+$groups = []
+$users = []
+
 class Group
-	attr_accessor :name, :users
+	attr_accessor :name
 
 	def initialize(name)
 		@name = name
-		@users = []
+		$groups.push(self)
 	end
+
+	def add_user(new_user)
+		new_user.add_group(self)
+	end	
 
 end
 
@@ -15,6 +22,7 @@ class User
 	def initialize(name)
 		@name = name
 		@groups = []
+		$users.push(self)
 	end
 
 	def groups
@@ -24,11 +32,24 @@ class User
 	def add_group(new_group)		
 		if !(@groups.include?(new_group))
 			@groups << new_group
-			new_group.users.push(name)
 		end
 	end
 
 
+
+end
+
+def group_hash(groups, users)
+
+	hash = groups.inject(Hash.new{[]}){ |result, a|
+
+	users.each do |elem| 
+		if(elem.groups.include?(a))
+			result[a.name] += [elem.name]
+		end
+	end
+	result
+	}
 
 end
 
@@ -45,4 +66,14 @@ aleksey.add_group(admin)
 aleksey.add_group(admin)
 aleksey.add_group(moderator)
 
-p moderator.users
+
+#p admin.users
+#p user.users
+#p moderator.users
+
+p igor.groups
+#p aleksey.groups
+
+moderator.add_user(igor)
+
+p group_hash($groups, $users)
